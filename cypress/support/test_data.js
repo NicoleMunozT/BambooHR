@@ -9,5 +9,10 @@ export const TEST_DATA = {
     startDate: "12202024",
     endDate: "12202024",
     amount: "2",
-  }
+  },
+newemployee: {
+  firstName: "Michi",
+  lastName: "Berto",
+  hireDate: "12122022",
+}
 };
