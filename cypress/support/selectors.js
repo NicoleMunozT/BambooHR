@@ -17,5 +17,14 @@ export const SELECTORS = {
         selectCategory: '.fab-MenuOption__row',
         amount: 'input[aria-label="amount"]',
         sendRequest: 'button[type="submit"][data-bi-id="send-time-off-request-button"]'
+    },
+    registeremployee: {
+        newEmployee: 'button[data-menu-id="fab-menu1"]',
+        newEmployeeOption: 'a[data-bi-id="home-add-new-employee"]',
+        firstnameField:'input[data-fieldid="1"]', 
+        lastnameField: 'input[data-fieldid="2"]',
+        saveButton: 'button[data-bi-id="employees-add-employee-form-save"]',
+        registerToast: '.jade-Alert__left',
+        hiredateField: '#field_3-0'
     }
 }
