@@ -5,4 +5,9 @@ export const TEST_DATA = {
       password: "Papasfritas1",
     },
   },
+  timeoff: {
+    startDate: "12202024",
+    endDate: "12202024",
+    amount: "2",
+  }
 };
