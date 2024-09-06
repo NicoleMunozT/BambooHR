@@ -5,7 +5,7 @@ Feature: Register a New Employee in BambooHR
   So that the employee can be added to the BambooHR system
 
   Scenario: Successfully registering a new employee
-    Given The user is on the "Add New Employee" page
+    Given The user is on the Add New Employee page
     When The user enters the data in form
     And The user submits the employee registration form
-    Then The user should see a confirmation message "Employee has been successfully added"
+    Then The user should see a confirmation message "Nice! Michi was added successfully."
