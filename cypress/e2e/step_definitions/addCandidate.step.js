@@ -4,7 +4,7 @@ import { TEST_DATA } from "../../support/test_data";
 import { SELECTORS } from "../../support/selectors";
 
 Given("The user is on the Create job opening",() => {
-    cy.get(SELECTORS.addjob.hiringTab, { timeout: TIMEOUT })
+    cy.get(SELECTORS.pagetabs.hiringTab, { timeout: TIMEOUT })
     .should("be.visible").click();
     cy.wait(TIMEOUT)
     cy.get(SELECTORS.addjob.addJobButton, { timeout: TIMEOUT })
