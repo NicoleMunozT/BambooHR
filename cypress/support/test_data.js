@@ -1,7 +1,7 @@
 export const TEST_DATA = {
   users: {
     validUser: {
-      username: "nicoleyusaramunoztorrez@gmail.com",
+      username: "201706705@est.umss.edu",
       password: "Papasfritas1",
     },
   },
@@ -14,5 +14,14 @@ newemployee: {
   firstName: "Michi",
   lastName: "Berto",
   hireDate: "12122022",
+},
+newJob: {
+  postingTitle: "Software engineering",
+  jobDescription: "This is a test job",
+  numberClicks: 5,
+},
+newCandidate:{
+  firstName:"Armando",
+  lastName: "Mendoza", 
 }
 };
