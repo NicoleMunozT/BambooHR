@@ -26,5 +26,23 @@ export const SELECTORS = {
         saveButton: 'button[data-bi-id="employees-add-employee-form-save"]',
         registerToast: '.jade-Alert__left',
         hiredateField: '#field_3-0'
+    },
+    addjob: {
+        hiringTab:'a[data-bi-id="main-nav-hiring-tab"]',
+        addJobButton: 'button[data-bi-id="create-new-job-opening"]',
+        postingtitle: 'input[name="name"]',
+        jobstatusField:  'div[aria-label="Job Status Draft"]',
+        hiringleadField: 'div[aria-label="Hiring Lead –Select–"]',
+        employeetypeField: 'div[aria-label="Employment Type –Select–"]',
+        joblocationField: 'div[data-bi-id="job-location-select-remote"]',
+        jobdescriptionField: '#js-mce-message',
+        nextButton: 'button[data-bi-id="job-wizard-navigation-next-button"]',
+
+    },
+    addcandidate: {
+        newcandidateLink: 'a[href^="/hiring/candidates/add/"]',
+        firstnameField: '#FabricTextField-1',
+        lastnameField: '#FabricTextField-2',
+        saveButton: 'button[data-bi-id="save-candidate"]',
     }
 }

@@ -7,7 +7,7 @@ module.exports = defineConfig({
       on('file:preprocessor',cucumber())
     },
     specPattern:"cypress/e2e/features/*.feature",
-    baseUrl: "https://qa.bamboohr.com/login.php",
+    baseUrl: "https://michi.bamboohr.com/login.php",
     defaultCommandTimeout: 2000
   },
 });
