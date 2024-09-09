@@ -54,6 +54,12 @@ export const SELECTORS = {
 
     },
     myinfotabs:{
-        assets: 'a[data-bi-id="access-level-Assets-header-step"]'
+        assets: 'a[data-bi-id="access-level-Assets-header-step"]',
+        notes: 'a[data-bi-id="access-level-Notes-header-step"]',
+    },
+    notesTab:{
+        addnoteField: '#note',
+        postButton: 'button[type="submit"]',
+        commentNote:'.commentNote__content',
     },
 }

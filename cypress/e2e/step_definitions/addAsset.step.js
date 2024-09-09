@@ -7,6 +7,12 @@ Given("The user is on the Assets page",() => {
     cy.get(SELECTORS.pagetabs.myinfoTab, { timeout: TIMEOUT })
     .should("be.visible").click();
     cy.wait(TIMEOUT)
+    cy.url().then((url) => {
+      if (url.includes('employees/notes')) {
+        cy.get(SELECTORS.myinfotabs.assets).click(); 
+        cy.wait(TIMEOUT)
+      } 
+    });
 })
 When("The user clicks on Add New Asset", () => {
     cy.contains("span", "+ Add Entry").click({force:true});
@@ -19,7 +25,7 @@ When("The user clicks on Add New Asset", () => {
     .type(TEST_DATA.addAsset.assetType);
  })
  When("The user submits the asset information", () => {
-    cy.get(SELECTORS.addasset.saveButton, { timeout: TIMEOUT }).find("span").contains("Save").should("be.visible").click({ multiple: true, force:true });
+    cy.get(SELECTORS.addasset.saveButton, { timeout: TIMEOUT }).find("span").contains("Save").should("be.visible").click({ force:true });
  })
  
  Then("The user should see a message {string}", (message) =>  {

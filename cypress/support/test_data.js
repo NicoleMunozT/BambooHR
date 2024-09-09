@@ -26,5 +26,8 @@ newCandidate:{
 },
 addAsset: {
   assetType: "Monitor",
+},
+notes: {
+  addNote: "This is a test note",
 }
 };
