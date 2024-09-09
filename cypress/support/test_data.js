@@ -23,5 +23,8 @@ newJob: {
 newCandidate:{
   firstName:"Armando",
   lastName: "Mendoza", 
+},
+addAsset: {
+  assetType: "Monitor",
 }
 };

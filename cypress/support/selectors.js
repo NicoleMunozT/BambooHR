@@ -5,8 +5,12 @@ export const SELECTORS = {
         loginButton:'.login-actions button[type="submit"]',
 
     },
-    timeoff: {
+    pagetabs:{
         myinfoTab: 'a[data-bi-id="main-nav-my-info-tab"]',
+        hiringTab:'a[data-bi-id="main-nav-hiring-tab"]',
+
+    },
+    timeoff: {
         timeoffTab:'a[data-bi-id="access-level-TimeOff-header-step"]',
         recordTimeOffButton:'button[aria-label="Record Time Off"]',
         saveButton: 'button[type="submit"]',
@@ -28,7 +32,6 @@ export const SELECTORS = {
         hiredateField: '#field_3-0'
     },
     addjob: {
-        hiringTab:'a[data-bi-id="main-nav-hiring-tab"]',
         addJobButton: 'button[data-bi-id="create-new-job-opening"]',
         postingtitle: 'input[name="name"]',
         jobstatusField:  'div[aria-label="Job Status Draft"]',
@@ -44,5 +47,13 @@ export const SELECTORS = {
         firstnameField: '#FabricTextField-1',
         lastnameField: '#FabricTextField-2',
         saveButton: 'button[data-bi-id="save-candidate"]',
-    }
+    },
+    addasset:{
+        assetcategoryField: 'div[aria-label="Asset Category –Select–"]',
+        saveButton: 'button[tabindex="0"][type="button"]',
+
+    },
+    myinfotabs:{
+        assets: 'a[data-bi-id="access-level-Assets-header-step"]'
+    },
 }
