@@ -56,10 +56,20 @@ export const SELECTORS = {
     myinfotabs:{
         assets: 'a[data-bi-id="access-level-Assets-header-step"]',
         notes: 'a[data-bi-id="access-level-Notes-header-step"]',
+        benefits: 'a[data-bi-id="access-level-Benefits-header-step"]',
     },
     notesTab:{
         addnoteField: '#note',
         postButton: 'button[type="submit"]',
         commentNote:'.commentNote__content',
+    },
+    benefitsTab: {
+        benefitCard: '#js-plan-card-root',
+        benefitButton: 'div#js-plan-action-dropdown',
+        menuitem: 'div[role="menuitem"]',
+        datewaivedField: 'input[placeholder="mm/dd/yyyy"]',
+        saveButton: 'button[type="submit"]',
+        coverageField: 'div[aria-label=" –Select–"]',
+        employeeCoverage: '.fab-MenuOption__row',
     },
 }

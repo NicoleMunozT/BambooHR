@@ -29,5 +29,9 @@ addAsset: {
 },
 notes: {
   addNote: "This is a test note",
+},
+benefits: {
+  coverageDateEdit: "0912024",
+  coverageDateTerminate: "09142024",
 }
 };

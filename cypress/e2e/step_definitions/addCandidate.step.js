@@ -1,6 +1,6 @@
 import { Given, When, Then } from "cypress-cucumber-preprocessor/steps";
 import { TIMEOUT } from "../../support";
-import { TEST_DATA } from "../../support/test_data";
+import { TEST_DATA } from "../../fixtures/test_data";
 import { SELECTORS } from "../../support/selectors";
 
 Given("The user is on the Create job opening",() => {
