@@ -33,5 +33,9 @@ notes: {
 benefits: {
   coverageDateEdit: "0912024",
   coverageDateTerminate: "09142024",
-}
+},
+emergency: {
+  nameEmergency: 'Beatriz Pinzon',
+  homePhone: '44786744',
+},
 };
