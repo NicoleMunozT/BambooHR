@@ -1,8 +1,8 @@
 export const TEST_DATA = {
   users: {
     validUser: {
-      username: "201706705@est.umss.edu",
-      password: "Papasfritas1",
+      username: "testbamboo468@gmail.com",
+      password: "Automation1",
     },
   },
   timeoff: {

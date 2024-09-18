@@ -4,20 +4,24 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "reports:clear": "if exist cypress\\videos rmdir /q /s cypress\\videos && if exist cypress\\screenshots rmdir /q /s cypress\\screenshots && if exist cypress\\reports rmdir /q /s cypress\\reports",
+    "allure:clear": "if exist allure-report rmdir /q /s allure-report && if exist allure-results rmdir /q /s allure-results && if exist cypress\\screenshots rmdir /q /s cypress\\screenshots && if exist cypress\\videos rmdir /q /s cypress\\videos && if exist reports rmdir /q /s reports",
+    "cy:run": "npx cypress run --env allure=true,allureReuseAfterSpec=true --browser chrome",
+    "allure:report": "allure generate allure-results --clean -o allure-report"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "dependencies": {
-    "cypress": "^13.13.3",
-    "cypress-real-events": "^1.13.0"
-  },
   "devDependencies": {
-    "cypress-cucumber-preprocessor": "^4.3.1"
-  },
-  "cypress-cucumber-preprocessor": {
-    "nonGlobalStepDefinitions": false,
-    "step_definitions": "cypress/e2e/step_Definitions/"
+    "@badeball/cypress-cucumber-preprocessor": "^20.1.2",
+    "@bahmutov/cypress-esbuild-preprocessor": "^2.2.3",
+    "cucumber-json-report-formatter": "^0.1.4",
+    "cypress": "^10.7.0",
+    "cypress-real-events": "^1.13.0",
+    "esbuild": "^0.23.1",
+    "multiple-cucumber-html-reporter": "^3.7.0",
+    "@shelex/cypress-allure-plugin": "^2.31.0",
+    "allure-commandline": "^2.30.0"
   }
 }
