@@ -1,18 +1,14 @@
-import { Given, When, Then } from "cypress-cucumber-preprocessor/steps";
 import { TIMEOUT } from "../../support";
 import { TEST_DATA } from "../../fixtures/test_data";
 import { SELECTORS } from "../../support/selectors";
+import { Given, Then, When } from "@badeball/cypress-cucumber-preprocessor";
 
 Given("The user is on the Assets page",() => {
     cy.get(SELECTORS.pagetabs.myinfoTab, { timeout: TIMEOUT })
     .should("be.visible").click();
     cy.wait(TIMEOUT)
-    cy.url().then((url) => {
-      if (url.includes('employees/notes')) {
-        cy.get(SELECTORS.myinfotabs.assets).click(); 
-        cy.wait(TIMEOUT)
-      } 
-    });
+    cy.get(SELECTORS.myinfotabs.assets).click(); 
+    cy.wait(TIMEOUT)
 })
 When("The user clicks on Add New Asset", () => {
     cy.contains("span", "+ Add Entry").click({force:true});

@@ -1,7 +1,7 @@
-import {Before} from "cypress-cucumber-preprocessor/steps";
 import { TIMEOUT } from "../../support";
 import { TEST_DATA } from "../../fixtures/test_data";
 import { SELECTORS } from "../../support/selectors";
+import { Before } from "@badeball/cypress-cucumber-preprocessor";
 
 Before({ tags: "@loginRequired" }, () => {
     cy.visit("/")

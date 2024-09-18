@@ -44,8 +44,8 @@ export const SELECTORS = {
     },
     addcandidate: {
         newcandidateLink: 'a[href^="/hiring/candidates/add/"]',
-        firstnameField: '#FabricTextField-1',
-        lastnameField: '#FabricTextField-2',
+        firstnameField: 'input[name="firstName"]',
+        lastnameField: 'input[name="lastName"]',
         saveButton: 'button[data-bi-id="save-candidate"]',
     },
     addasset:{

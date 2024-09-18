@@ -1,4 +1,4 @@
-import { Given, When, Then } from "cypress-cucumber-preprocessor/steps";
+import { Given, Then, When } from "@badeball/cypress-cucumber-preprocessor";
 import { TIMEOUT } from "../../support";
 import { TEST_DATA } from "../../fixtures/test_data";
 import { SELECTORS } from "../../support/selectors";
@@ -16,7 +16,6 @@ When("The user clicks on Edit Benefit", () => {
     cy.get(SELECTORS.benefitsTab.benefitCard, { timeout: TIMEOUT }).eq(0).find(SELECTORS.benefitsTab.benefitButton).find("button").should("be.visible").click({force: true})
     cy.get(SELECTORS.benefitsTab.menuitem, { timeout: TIMEOUT }).eq(0).should("be.visible").click()
     cy.wait(TIMEOUT)
- 
 })
  When("The user updates the benefit", () => {
     cy.get(SELECTORS.benefitsTab.datewaivedField,{timeout:TIMEOUT}).should("be.visible").type(TEST_DATA.benefits.coverageDateEdit)
