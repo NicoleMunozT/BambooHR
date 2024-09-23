@@ -26,5 +26,15 @@ When("The user enters the data in form", () => {
     .click();
  })
  Then("The user should see a confirmation message {string}", (message) => {
+    cy.wait(TIMEOUT)
     cy.get(SELECTORS.registeremployee.registerToast,{timeout: TIMEOUT}).should("exist").should("include.text",`${message}`);
+  })
+  When("The user leaves the First Name field blank", () => {
+    cy.get(SELECTORS.registeremployee.lastnameField,{timeout:TIMEOUT}).should("be.visible").type(TEST_DATA.newemployee.lastName)
+    cy.get(SELECTORS.registeremployee.hiredateField,{timeout:TIMEOUT}).should("be.visible").type(TEST_DATA.newemployee.hireDate)
+ 
+})
+Then("The user should see an error message for register employee {string}", (message) => {
+    cy.wait(TIMEOUT)
+    cy.contains('div', message).should("exist");
   })

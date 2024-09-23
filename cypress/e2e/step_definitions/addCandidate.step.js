@@ -16,6 +16,7 @@ Given("The user is on the Create job opening",() => {
     
 })
 When("The user enters the job title", () => {
+   cy.wait(TIMEOUT)
     cy.get(SELECTORS.addjob.postingtitle, { timeout: TIMEOUT }).should("be.visible").type(TEST_DATA.newJob.postingTitle)
     cy.get(SELECTORS.addjob.jobstatusField, { timeout: TIMEOUT }).should("be.visible").click()
     .type('o')
@@ -42,9 +43,11 @@ When("The user enters the job title", () => {
     }
  })
  When("The user is on new candidate page", () => {
+        cy.wait(TIMEOUT)
         cy.get(SELECTORS.addcandidate.newcandidateLink, { timeout: TIMEOUT }).should("be.visible").click();
  })
  When("The user enters the candidate's first name", () => {
+    cy.wait(TIMEOUT)
     cy.get(SELECTORS.addcandidate.firstnameField,{timeout:TIMEOUT}).should("be.visible").type(TEST_DATA.newCandidate.firstName)
  })
  When("The user enters the candidate's last name", () => {

@@ -15,3 +15,14 @@ Feature: Register a New Job with a Candidate in BambooHR
     And The user enters the candidate's last name 
     And The user submits the new job with the candidate information
     Then The user should be in new candidate page
+
+  Scenario: Attempting to register a new candidate with all fields blank
+    Given The user is on the Create job opening
+    When The user enters the job title
+    And The user selects the job type Full-Time
+    And The user enters the job description 
+    And The user creates a new job
+    And The user is on new candidate page
+    And The user enters the candidate's first name
+    And The user submits the new job with the candidate information
+    Then The user should see an error message for add candidate "Whoops... No worries. Please fix any missing or incorrect information and try again."

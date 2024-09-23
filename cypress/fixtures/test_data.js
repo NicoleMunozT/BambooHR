@@ -4,6 +4,12 @@ export const TEST_DATA = {
       username: "testbamboo468@gmail.com",
       password: "Automation1",
     },
+    invalidUser: {
+      usernameInvalid: "invalid@test.com",
+      passwordInvalid: "invalidpassword",
+
+    },
+    
   },
   timeoff: {
     startDate: "12202024",

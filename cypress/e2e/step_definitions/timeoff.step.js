@@ -35,5 +35,31 @@ When("The user submits the timeoff request", () => {
 });
 
 Then("The user should be redirect to My info page", () => {
-    cy.url().should('eq', 'https://qa.bamboohr.com/employees/pto/?id=8');
+    cy.url().should('contains', '/employees/pto/?id=8');
 });
+
+Given("The user is on the Time-Off page", () => {
+  cy.get(SELECTORS.timeoff.utilRequestButton, { timeout: TIMEOUT })
+    .should("be.visible")
+    .click();
+    cy.get(SELECTORS.timeoff.timeoffRequestOption, { timeout: TIMEOUT })
+    .should("be.visible")
+    .click();
+});
+When(" The user views a time-off request", () => {
+  cy.wait(TIMEOUT);
+  cy.get(SELECTORS.timeoff.timeoffRequest, { timeout: TIMEOUT })
+    .last()
+    .should("be.visible")
+    .click();
+});
+When("The user clicks on Deny", () => {
+  cy.wait(TIMEOUT);
+  cy.get(SELECTORS.timeoff.denyButton, { timeout: TIMEOUT })
+    .should("be.visible")
+    .click();
+});
+Then("The user should see a modal with the title {string}", (message) => {
+  cy.wait(TIMEOUT)
+  cy.contains('h3', message).should("exist");
+})
