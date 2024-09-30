@@ -1,9 +1,15 @@
 export const TEST_DATA = {
   users: {
     validUser: {
-      username: "testbamboo468@gmail.com",
-      password: "Automation1",
+      username: "marcelavalencia9424@gmail.com",
+      password: "Papasfritas1",
     },
+    invalidUser: {
+      usernameInvalid: "invalid@test.com",
+      passwordInvalid: "invalidpassword",
+
+    },
+    
   },
   timeoff: {
     startDate: "12202024",

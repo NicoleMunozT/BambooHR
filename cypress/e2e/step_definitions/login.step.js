@@ -16,4 +16,17 @@ Given("The user is on the login page",() => {
 
   Then("The user should see the BambooHR dashboard", () => {
     cy.contains('button', 'Yes, Trust this Browser').click();
+    cy.url().should('contains', '/home');
   })
+  When("The user enters the invalid username and password", () => {
+    cy.get(SELECTORS.login.emailField,{timeout:TIMEOUT}).should("be.visible").type(TEST_DATA.users.invalidUser.usernameInvalid)
+    cy.get(SELECTORS.login.passwordField,{timeout:TIMEOUT}).should("be.visible").type(TEST_DATA.users.validUser.password)
+ })
+ Then("The user should see an error message {string}", (message) => {
+  cy.wait(TIMEOUT)
+  cy.contains('div', message).should("exist");
+})
+
+When("The user enters an empty username", () => {
+  cy.get(SELECTORS.login.passwordField,{timeout:TIMEOUT}).should("be.visible").type(TEST_DATA.users.validUser.password)
+})

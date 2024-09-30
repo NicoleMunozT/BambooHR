@@ -20,7 +20,11 @@ export const SELECTORS = {
         category: 'div[aria-label="Time Off Category –Select–"',
         selectCategory: '.fab-MenuOption__row',
         amount: 'input[aria-label="amount"]',
-        sendRequest: 'button[type="submit"][data-bi-id="send-time-off-request-button"]'
+        sendRequest: 'button[type="submit"][data-bi-id="send-time-off-request-button"]',
+        utilRequestButton: '#utilRequests',
+        timeoffRequestOption: 'a[href="/inbox/time_off_requests/?assigned=me"]',
+        timeoffRequest: 'li.MsgListing__item.MsgListing__item--link[role="button"]',
+        denyButton: 'input[value="Deny"]',
     },
     registeremployee: {
         newEmployee: 'button[data-menu-id="fab-menu1"]',

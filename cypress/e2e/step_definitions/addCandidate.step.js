@@ -16,8 +16,9 @@ Given("The user is on the Create job opening",() => {
     
 })
 When("The user enters the job title", () => {
+   cy.wait(TIMEOUT)
     cy.get(SELECTORS.addjob.postingtitle, { timeout: TIMEOUT }).should("be.visible").type(TEST_DATA.newJob.postingTitle)
-    cy.get(SELECTORS.addjob.jobstatusField, { timeout: TIMEOUT }).should("be.visible").click()
+    cy.get(SELECTORS.addjob.jobstatusField, { timeout: TIMEOUT }).should("be.visible").click({force: true})
     .type('o')
     .trigger('keydown', { keyCode: 13 });
     cy.get(SELECTORS.addjob.hiringleadField, { timeout: TIMEOUT }).should("be.visible").click();
@@ -42,9 +43,11 @@ When("The user enters the job title", () => {
     }
  })
  When("The user is on new candidate page", () => {
+        cy.wait(TIMEOUT)
         cy.get(SELECTORS.addcandidate.newcandidateLink, { timeout: TIMEOUT }).should("be.visible").click();
  })
  When("The user enters the candidate's first name", () => {
+    cy.wait(TIMEOUT)
     cy.get(SELECTORS.addcandidate.firstnameField,{timeout:TIMEOUT}).should("be.visible").type(TEST_DATA.newCandidate.firstName)
  })
  When("The user enters the candidate's last name", () => {
@@ -52,9 +55,15 @@ When("The user enters the job title", () => {
  })
  When("The user submits the new job with the candidate information", () => {
     cy.get(SELECTORS.addcandidate.saveButton, { timeout: TIMEOUT }).should("be.visible").click();
+    cy.wait(TIMEOUT)
  })
  
  Then("The user should be in new candidate page", () => {
     cy.wait(TIMEOUT)
     cy.contains("h1", `${TEST_DATA.newCandidate.firstName} ${TEST_DATA.newCandidate.lastName}`).should("exist");
   })
+
+  Then("The user should see an error message for add candidate {string}", (message) => {
+   cy.wait(TIMEOUT)
+   cy.contains('div', message).should("exist");
+ })
