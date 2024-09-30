@@ -46,7 +46,7 @@ Given("The user is on the Time-Off page", () => {
     .should("be.visible")
     .click();
 });
-When(" The user views a time-off request", () => {
+When("The user views a time-off request", () => {
   cy.wait(TIMEOUT);
   cy.get(SELECTORS.timeoff.timeoffRequest, { timeout: TIMEOUT })
     .last()
