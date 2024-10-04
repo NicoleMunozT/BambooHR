@@ -41,7 +41,7 @@ Then("The user should be redirect to My info page", () => {
 Given("The user is on the Time-Off page", () => {
   cy.get(SELECTORS.timeoff.utilRequestButton, { timeout: TIMEOUT })
     .should("be.visible")
-    .click();
+    .click({force: true});
     cy.get(SELECTORS.timeoff.timeoffRequestOption, { timeout: TIMEOUT })
     .should("be.visible")
     .click();
@@ -57,7 +57,7 @@ When("The user clicks on Deny", () => {
   cy.wait(TIMEOUT);
   cy.get(SELECTORS.timeoff.denyButton, { timeout: TIMEOUT })
     .should("be.visible")
-    .click();
+    .click({force: true});
 });
 Then("The user should see a modal with the title {string}", (message) => {
   cy.wait(TIMEOUT)

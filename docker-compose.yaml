@@ -1,8 +1,35 @@
 version: '3'
 
 services:
+  jenkins:
+    build:
+      context: .
+      dockerfile: Dockerfile.jenkins
+    container_name: jenkins
+    ports:
+      - "8080:8080"
+      - "50000:50000"
+    volumes:
+      - ./jenkins_home:/var/jenkins_home  
+      - /var/run/docker.sock:/var/run/docker.sock
+    networks:
+      - jenkins-net
+    environment:
+      JENKINS_OPTS: --prefix=/jenkins
+    user: root
+
   cypress:
-    image: cypress-app:latest
+    build: ./
     volumes:
       - ./cypress:/app/cypress
-    command: ["npx", "cypress", "run"]  
+    environment:
+      - NODE_ENV=ci
+    command: ["npx", "cypress", "run"]
+    networks:
+      - jenkins-net
+    depends_on:
+      - jenkins
+
+networks:
+  jenkins-net:
+    driver: bridge

@@ -14,6 +14,17 @@ module.exports = defineConfig({
       on("file:preprocessor", bundler);
       allureWriter(on, config);
       await addCucumberPreprocessorPlugin(on, config);
+
+      on('before:browser:launch', (browser = {}, launchOptions) => {
+        if (browser.family === 'chromium' && browser.name !== 'electron') {
+          launchOptions.args.push('--lang=en-US');
+        }
+        if (browser.family === 'firefox') {
+          launchOptions.preferences['intl.accept_languages'] = 'en-US';
+        }
+        return launchOptions;
+      });
+
       return config;
     },
     specPattern:"cypress/e2e/features/*.feature",
