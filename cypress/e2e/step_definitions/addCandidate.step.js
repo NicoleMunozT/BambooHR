@@ -21,7 +21,7 @@ When("The user enters the job title", () => {
     cy.get(SELECTORS.addjob.jobstatusField, { timeout: TIMEOUT }).should("be.visible").click({force: true})
     .type('o')
     .trigger('keydown', { keyCode: 13 });
-    cy.get(SELECTORS.addjob.hiringleadField, { timeout: TIMEOUT }).should("be.visible").click();
+    cy.get(SELECTORS.addjob.hiringleadField, { timeout: TIMEOUT }).should("be.visible").click({force: true});
     cy.wait(TIMEOUT)
     cy.contains("div", "Aaron Eckerly").click();
     cy.get(SELECTORS.addjob.employeetypeField, { timeout: TIMEOUT }).should("be.visible").click();

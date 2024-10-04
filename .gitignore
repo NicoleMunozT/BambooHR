@@ -134,4 +134,5 @@ dist
 /allure-results
 /cypress/screenshots
 /cypress/videos
+/jenkins_home
 

@@ -13,7 +13,7 @@ Feature: BambooHR Login
     Given The user is on the login page
     When The user enters the invalid username and password
     And The user clicks the login button
-    Then The user should see an error message "El e-mail o contraseña que ingresaste no son válidos."
+    Then The user should see an error message "The email or password you entered is invalid."
 
   Scenario: Unsuccessful login with an empty username
     Given The user is on the login page
