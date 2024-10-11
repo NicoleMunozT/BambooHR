@@ -1,8 +1,8 @@
 export const TEST_DATA = {
   users: {
     validUser: {
-      username: "marcelavalencia9424@gmail.com",
-      password: "Papasfritas1",
+      username: "testbamboo468@gmail.com",
+      password: "Automation1",
     },
     invalidUser: {
       usernameInvalid: "invalid@test.com",
@@ -37,7 +37,7 @@ notes: {
   addNote: "This is a test note",
 },
 benefits: {
-  coverageDateEdit: "0912024",
+  coverageDateEdit: "09122024",
   coverageDateTerminate: "09142024",
 },
 emergency: {
