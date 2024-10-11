@@ -21,6 +21,7 @@ When("The user clicks on Add New Asset", () => {
     .type(TEST_DATA.addAsset.assetType);
  })
  When("The user submits the asset information", () => {
+    cy.wait(TIMEOUT)
     cy.get(SELECTORS.addasset.saveButton, { timeout: TIMEOUT }).find("span").contains("Save").should("be.visible").click({ force:true });
  })
  

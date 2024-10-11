@@ -28,7 +28,7 @@ module.exports = defineConfig({
       return config;
     },
     specPattern:"cypress/e2e/features/*.feature",
-    baseUrl: "https://umss.bamboohr.com/login.php",
+    baseUrl: "https://testauto.bamboohr.com/login.php",
     chromeWebSecurity: false,
     defaultCommandTimeout: 2000,
     video: false,
